@@ -2,5 +2,5 @@
 
 node ("centos7") {
     checkout scm
-    gitTag{ PACKAGE_VERSION = "test-tag123"}
+    gitTag "test-tag123"
 }

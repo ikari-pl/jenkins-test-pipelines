@@ -8,5 +8,6 @@ node {
    } else {
    input(message: 'Push to Repository?', id: 'push', ok: 'push')
    }
-   gitTag(tag_test123)
+   def PACKAGE_VERSION = tag_test123
+   gitTag(${PACKAGE_VERSION})
 }

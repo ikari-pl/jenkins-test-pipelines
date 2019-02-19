@@ -8,4 +8,5 @@ node {
    } else {
    input(message: 'Push to Repository?', id: 'push', ok: 'push')
    }
+   gitTag(tag_test123)
 }

@@ -1,4 +1,6 @@
-node ("centos7") {
 @Library("jenkins-shared-library@RELENG-4072") _
-gitTag{ PACKAGE_VERSION = "test-tag123"}
+
+node ("centos7") {
+    checkout scm
+    gitTag{ PACKAGE_VERSION = "test-tag123"}
 }

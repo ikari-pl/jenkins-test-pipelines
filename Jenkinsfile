@@ -1,7 +1,7 @@
 @Library("jenkins-shared-library@RELENG-4072") _
 
 node ("centos7") {
-    def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
+    echo env.GIT_URL
     checkout scm
     env.PACKAGE_VERSION = "1.0.${env.BUILD_NUMBER}"
     withCredentials([usernamePassword(credentialsId: '8c2257a7-5035-422f-87e4-d0fea32219a1', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {

@@ -2,5 +2,8 @@
 
 node ("centos7") {
     checkout scm
-    gitTag "test-tag123"
+    env.PACKAGE_VERSION = "1.0"
+    sh('git tag -a rpm-${PACKAGE_VERSION')
+    sh('git push --tags')
+    // gitTag "test-tag123"
 }

@@ -3,7 +3,7 @@
 node ("centos7") {
     checkout scm
     env.PACKAGE_VERSION = "1.0.${env.BUILD_NUMBER}"
-    sh "echo ${env.BRANCH_NAME}"
+    sh "echo ${env.GIT_URL}"
     withCredentials([usernamePassword(credentialsId: '8c2257a7-5035-422f-87e4-d0fea32219a1', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
         sh('git config --global user.email "releng@openx.org"')
         sh('git config --global user.name "jenkins"')

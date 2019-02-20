@@ -2,8 +2,8 @@
 
 node ("centos7") {
     checkout scm
-    def gitUrl = scm.userRemoteConfigs[0].url
     env.PACKAGE_VERSION = "1.0.${env.BUILD_NUMBER}"
+    sh('echo $GIT_URL')
     withCredentials([usernamePassword(credentialsId: '8c2257a7-5035-422f-87e4-d0fea32219a1', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
         sh('git config --global user.email "releng@openx.org"')
         sh('git config --global user.name "jenkins"')

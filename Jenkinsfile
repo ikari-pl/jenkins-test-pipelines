@@ -8,7 +8,7 @@ node ("centos7") {
         sh('git config --global user.email "releng@openx.org"')
         sh('git config --global user.name "jenkins"')
         sh('git tag -a rpm-${PACKAGE_VERSION} -m "tag for release"')
-        sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${env.GIT_URL} --tags')
+        sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${GIT_URL} --tags')
     }
     // gitTag "test-tag123"
 }

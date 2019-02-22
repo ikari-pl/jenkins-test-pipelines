@@ -3,7 +3,7 @@
 node ("centos7") {
     checkout scm
     env.PACKAGE_VERSION = "1.0.${env.BUILD_NUMBER}"
-    sh('git config --get remote.origin.url | cut -d "@" -f 2 > git_remote_url')
+    sh('git config --get remote.origin.url | cut -d "//" -f 2 > git_remote_url')
     env.GIT_URL = readFile 'git_remote_url'
     withCredentials([usernamePassword(credentialsId: '8c2257a7-5035-422f-87e4-d0fea32219a1', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
         sh('git config --global user.email "releng@openx.org"')

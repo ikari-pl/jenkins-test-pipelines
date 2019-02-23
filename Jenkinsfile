@@ -1,7 +1,7 @@
-@Library("jenkins-shared-library@RELENG-4072") _
+@Library("jenkins-shared-library") _
 
 node ("centos7") {
     checkout scm
     env.PACKAGE_VERSION = "1.0.${env.BUILD_NUMBER}"
-    gitTag 
+    gitTag $PACKAGE_VERSION
 }

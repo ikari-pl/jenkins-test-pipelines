@@ -1,7 +1,7 @@
 @Library("jenkins-shared-library") _
 
-node ("centos7") {
-    checkout scm
-    env.PACKAGE_VERSION = "1.0.${env.BUILD_NUMBER}"
-    gitTag "${PACKAGE_VERSION}"
+javaBuildPipeline_c7c6 {
+        componentName = "test"
+        agentLabel = "java"
     }
+gitTag "${PACKAGE_VERSION}"

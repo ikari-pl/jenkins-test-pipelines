@@ -1,3 +1,5 @@
+clean:
+	echo "we clean"
 compile:
 	echo "COMPILE STEP"
 	

@@ -21,6 +21,7 @@ podTemplate(
   ]
 )
 
+{
     node(label) {
         try {
             stage('BUILD') {
@@ -62,4 +63,5 @@ podTemplate(
         throw(err)
       }
     }
+}
 }

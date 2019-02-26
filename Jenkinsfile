@@ -5,5 +5,6 @@ javaBuildPipeline_c7c6 {
         agentLabel = "java"
     }
 node ("centos7") {
+        checkout scm
         gitTag "${PACKAGE_VERSION}"
     }

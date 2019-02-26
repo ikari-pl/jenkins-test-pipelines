@@ -7,8 +7,6 @@ test:
 	echo "TEST STEP"
 package:
 	echo "PACKAGE STEP"
-	pwd
-	ls **
-	#touch dir/target/1/touch.jar
+	touch dir/target/1/touch.jar
 	echo "TAG-LOCATION" > PACKAGE_LOCATION.txt
 	echo "TAG-VERSION-1" > PACKAGE_VERSION.txt

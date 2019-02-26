@@ -21,9 +21,6 @@ podTemplate(
   ]
 )
 
-)
-
-
     node(label) {
         try {
             stage('BUILD') {

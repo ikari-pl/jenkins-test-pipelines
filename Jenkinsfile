@@ -4,4 +4,6 @@ javaBuildPipeline_c7c6 {
         componentName = "test"
         agentLabel = "java"
     }
-gitTag "${PACKAGE_VERSION}"
+node ("centos7") {
+        gitTag "${PACKAGE_VERSION}"
+    }

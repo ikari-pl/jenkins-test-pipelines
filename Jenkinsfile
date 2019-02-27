@@ -29,6 +29,7 @@ podTemplate(
                 withCredentials([file(credentialsId: 'id_rsa', variable: 'ID_RSA')]) {
                     sh 'cp -f $ID_RSA ~/.ssh'
                 }
+                sh 'git config --global http.sslverify false'
                 checkout scm
                 if (config.RUN_BOOTSTRAP) {sh './bootstrap'}
                 sh 'make clean compile'

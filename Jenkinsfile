@@ -15,9 +15,7 @@ podTemplate(
     // ...unless you want to use a different image for the agent
     // All of these containers are spun up on the same k8s pod and share a common working directory
     // Therefore, any files produced on one container, is automatically available on the next.
-    containerTemplate(name: 'jnlp', image: 'us.gcr.master.openx.org/ox-registry/jenkins/jenkins-jnlp', args: '${computer.jnlpmac} ${computer.name}'),
-    containerTemplate(name: 'centos7', image: 'us.gcr.master.openx.org/ox-registry/jenkins-agent-java:centos7', command: 'cat', ttyEnabled: true),
-    containerTemplate(name: 'centos6', image: 'us.gcr.master.openx.org/ox-registry/jenkins-agent-java:centos6', command: 'cat', ttyEnabled: true),
+    containerTemplate(name: 'jnlp', image: 'us.gcr.master.openx.org/ox-registry/jenkins/jenkins-agent-java:centos7', args: '${computer.jnlpmac} ${computer.name}'),
   ]
 )
 

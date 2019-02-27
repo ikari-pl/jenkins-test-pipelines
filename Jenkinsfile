@@ -31,7 +31,6 @@ podTemplate(
                 }
                 sh 'git config --global http.sslverify false'
                 checkout scm
-                if (config.RUN_BOOTSTRAP) {sh './bootstrap'}
                 sh 'make clean compile'
             }
 

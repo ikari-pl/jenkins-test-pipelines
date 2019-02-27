@@ -2,7 +2,7 @@
 
 @Library('jenkins-shared-library') _
 
-def componentName = 'broker'
+def componentName = 'java'
 def buildNum = "${env.BUILD_NUMBER}"
 
 // Define k8s podTemplate for agent

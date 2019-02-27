@@ -57,11 +57,11 @@ podTemplate(
         stage ('QUEUE FOR DEPLOY') {
             build job: "${config.componentName}-queue", parameters: [string(name: 'VERSION', value: "${PACKAGE_VERSION}")], wait: false
             }
+          }
         }
       catch (err) {
         notifySlack('FAILED', '#failed-builds')
         throw(err)
       }
-    }
-  }
+   }
 }

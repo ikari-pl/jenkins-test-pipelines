@@ -2,9 +2,8 @@
 
 @Library('jenkins-shared-library') _
 
-def buildNum = "${env.BUILD_NUMBER}"
 {
-    node(centos7&&java) {
+    node("centos7&&java") {
         try {
             stage('BUILD') {
                 deleteDir()

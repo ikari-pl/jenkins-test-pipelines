@@ -46,9 +46,10 @@ podTemplate(
             if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
             stage('UPLOAD ARTIFACT') {
                 gitTag "${PACKAGE_VERSION}"
-                sh 'ox-artifact cp ${PACKAGE_LOCATION} openx-apps:/6/testing/packages/'
-                sh 'ox-artifact cp ${PACKAGE_LOCATION} openx-apps:/7/testing/packages/'
+                for(pkg in "${PACKAGE_LOCATION}") {
+                    sh 'ox-artifact cp pkg openx-apps:/7/testing/packages/'
                 }
+              }
             }
 
         if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {

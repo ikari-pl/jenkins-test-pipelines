@@ -2,25 +2,9 @@
 
 @Library('jenkins-shared-library') _
 
-def componentName = 'java'
 def buildNum = "${env.BUILD_NUMBER}"
-
-// Define k8s podTemplate for agent
-def label = "${componentName}-${UUID.randomUUID().toString()}"
-podTemplate(
-  cloud: 'k8s-prod',
-  label: label,
-  containers:[
-    // The jnlp containerTemplate definition doesn't need to be defined because it's used by default...
-    // ...unless you want to use a different image for the agent
-    // All of these containers are spun up on the same k8s pod and share a common working directory
-    // Therefore, any files produced on one container, is automatically available on the next.
-    containerTemplate(name: 'jnlp', image: 'us.gcr.master.openx.org/ox-registry/jenkins-agent-java:centos7', workingDir: '/var/lib/jenkins-agent', command: '/etc/init.d/jenkins-agent', args: 'start'),
-  ]
-)
-
 {
-    node(label) {
+    node(centos7&&java) {
         try {
             stage('BUILD') {
                 deleteDir()

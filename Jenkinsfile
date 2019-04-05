@@ -2,7 +2,7 @@
 
 @Library('jenkins-shared-library') _
 
-node("centos7&&java") {
+node("centos7") {
     try {
         stage('BUILD') {
             deleteDir()

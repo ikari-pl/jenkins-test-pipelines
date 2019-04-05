@@ -27,9 +27,7 @@ node("centos7&&java") {
         }
             if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
                 stage('UPLOAD ARTIFACT') {
-                for(pkg in "${PACKAGE_LOCATION}") {
-                sh 'ox-artifact cp pkg openx-apps:/7/testing/packages/'
-            }
+                sh 'for pkg in $PACKAGE_LOCATION; do ox-artifact cp $pkg openx-apps:/7/testing/packages/ ;done
           }
         }
      

@@ -23,10 +23,10 @@ node("centos7&&java") {
             archiveArtifacts artifacts: '**/target/**/*.jar, **/target/**/*.war', onlyIfSuccessful: true
             env.PACKAGE_VERSION = readFile 'PACKAGE_VERSION.txt'
             env.PACKAGE_LOCATION = readFile 'PACKAGE_LOCATION.txt'
+            sh 'echo $PACKAGE_LOCATION'
         }
             if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
                 stage('UPLOAD ARTIFACT') {
-                gitTag "${PACKAGE_VERSION}"
                 for(pkg in "${PACKAGE_LOCATION}") {
                 sh 'ox-artifact cp pkg openx-apps:/7/testing/packages/'
             }

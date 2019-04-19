@@ -1,6 +1,6 @@
 @Library("jenkins-shared-library") _
 
-erlangBuildPipeline_c7c6 {
-        componentName = "test"
-        agentLabel = "erlang"
-    }
+node ("centos7") {
+    checkout scm
+    gitTag "test-tag123"
+}

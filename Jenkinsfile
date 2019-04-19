@@ -1,4 +1,4 @@
-@Library("jenkins-shared-library@RELENG-4072") _
+@Library("jenkins-shared-library") _
 
 erlangBuildPipeline_c7c6 {
         componentName = "test"

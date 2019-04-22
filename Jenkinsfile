@@ -8,6 +8,5 @@ node ("centos7&&java") {
     sh 'git clone git@github-proxy.master.openx.org:dsspielm/delivery-broker-server.git && cd delivery-broker-server'
     env.PACKAGE_VERSION = "tag.for.release"
     sh 'pwd && ls'
-    sh 'cd delivery-broker-server && git tag -a rpm-${PACKAGE_VERSION} -m "tag for release"'
-    sh 'cd delivery-broker-server && git push git@github-proxy.master.openx.org:${GIT_URL} -f --tags'
+    sh 'cd delivery-broker-server && git tag -a rpm-${PACKAGE_VERSION} -m "tag for release" && pwd && git push git@github-proxy.master.openx.org:${GIT_URL} -f --tags'
 }

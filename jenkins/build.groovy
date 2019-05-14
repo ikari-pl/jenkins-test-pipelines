@@ -43,10 +43,10 @@ node(label) {
                 //sh 'for pkg in $PACKAGE_LOCATION; do ox-artifact cp $pkg openx-apps:/7/testing/packages/ ;done'
                 }
         }
+   }
    catch (err) {
    sh 'echo "BUILD FAILED"'
    throw(err)
    }
-}
-}
+  }
 }

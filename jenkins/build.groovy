@@ -4,8 +4,7 @@ def label = UUID.randomUUID().toString()
 podTemplate(
   inheritFrom: 'default',
   label: label,
-)
-
+){
 node(label) {
     try {
         stage('BUILD') {
@@ -37,4 +36,5 @@ node(label) {
    sh 'echo "BUILD FAILED"'
    throw(err)
    }
+}
 }  

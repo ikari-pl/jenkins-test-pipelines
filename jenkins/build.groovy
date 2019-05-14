@@ -4,14 +4,6 @@ def label = UUID.randomUUID().toString()
 podTemplate(
   inheritFrom: 'default',
   label: label,
-  containers: [
-    containerTemplate(
-      name: 'node',
-      image: 'node:12',
-      ttyEnabled: true,
-      command: 'cat',
-    )
-  ]
 )
 
 node(label) {

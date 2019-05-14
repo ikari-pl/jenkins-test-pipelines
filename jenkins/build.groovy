@@ -27,5 +27,8 @@ node(label) {
                 }
             }
         }
+   catch (err) {
+   sh 'echo "BUILD FAILED"'
+   throw(err)
 }  
 

@@ -1,4 +1,5 @@
 def projectName = "Test Pipelines"
+def label = UUID.randomUUID().toString()
 
 node(label) {
     try {

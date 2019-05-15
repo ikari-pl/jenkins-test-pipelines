@@ -1,5 +1,5 @@
 clean:
-	echo "we clean"
+	echo "we clean?"
 	whoami
 compile:
 	echo "COMPILE STEP"

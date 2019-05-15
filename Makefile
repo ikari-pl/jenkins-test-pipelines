@@ -6,6 +6,8 @@ compile:
 	
 test:
 	echo "TEST STEP"
+	exit 1
+	
 package:
 	echo "PACKAGE STEP"
 	echo "NUMER1" > dir/target/1/touch1.jar
